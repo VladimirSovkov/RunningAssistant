@@ -1,5 +1,7 @@
 ﻿using RunningAssistant.Domain.Toolkit.Domain;
+using RunningAssistant.Domain.UserModel;
 using System;
+using System.Collections.Generic;
 
 namespace RunningAssistant.Domain.TrainingModel
 {
@@ -19,6 +21,10 @@ namespace RunningAssistant.Domain.TrainingModel
         public string Description { get; private set; }
         public DateTime Duration { get; private set; }
         public float Calories { get; private set; }
+
+        private readonly List<Result> _results = new List<Result>();
+        public virtual IReadOnlyCollection<Result> Results => _results.AsReadOnly();
+
 
         public void SetDuration(DateTime time)
         {

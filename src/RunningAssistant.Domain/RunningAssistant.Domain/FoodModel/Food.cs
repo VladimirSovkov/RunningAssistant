@@ -6,10 +6,10 @@ namespace RunningAssistant.Domain.FoodModel
     {
         public Food(
             string name
-            , float colorie = 0
-            , float proteins = 0
-            , float fats = 0
-            , float carbohydrates = 0)
+            , float colorie
+            , float proteins
+            , float fats
+            , float carbohydrates)
         {
             Name = name;
             Calorie = colorie;
@@ -23,5 +23,8 @@ namespace RunningAssistant.Domain.FoodModel
         public float Proteins { get; private set; }
         public float Fats { get; private set; }
         public float Carbohydrates { get; private set; } 
+
+        private Food()
+        { }
     }
 }

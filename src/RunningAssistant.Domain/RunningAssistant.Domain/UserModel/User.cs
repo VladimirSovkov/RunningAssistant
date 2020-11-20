@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RunningAssistant.Domain.UserModel
 {
@@ -22,6 +23,9 @@ namespace RunningAssistant.Domain.UserModel
         public string Login { get; private set; }
         public string Password { get; private set; }
         public bool Gender { get; private set; }
+
+        private readonly List<Result> _results = new List<Result>();
+        public virtual IReadOnlyCollection<Result> Results => _results.AsReadOnly();
 
         public void SetLogin(string login)
         {
