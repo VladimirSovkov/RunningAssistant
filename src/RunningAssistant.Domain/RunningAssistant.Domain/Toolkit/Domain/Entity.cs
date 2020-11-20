@@ -7,6 +7,8 @@ namespace RunningAssistant.Domain.Toolkit.Domain
     public abstract class Entity
     {
         public virtual int Id { get; set; }
+
+
         public bool IsTransient()
         {
             return Id == default(Int32);
