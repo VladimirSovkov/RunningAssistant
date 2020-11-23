@@ -8,6 +8,7 @@ namespace RunningAssistant.Infrastructure.Data.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<Result> builder)
         {
+            builder.ToTable("result");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseHiLo(HiLoSequence.DBSequenceHiLoForRunningAssistant);
 

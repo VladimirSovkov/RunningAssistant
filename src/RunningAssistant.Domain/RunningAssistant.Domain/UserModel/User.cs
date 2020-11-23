@@ -1,9 +1,10 @@
-﻿using System;
+﻿using RunningAssistant.Domain.Toolkit.Domain;
+using System;
 using System.Collections.Generic;
 
 namespace RunningAssistant.Domain.UserModel
 {
-    public class User
+    public class User : Entity
     {
         public User(
             string surname
@@ -44,5 +45,8 @@ namespace RunningAssistant.Domain.UserModel
             }
             Password = password;
         }
+
+        private User()
+        { }
     }
 }

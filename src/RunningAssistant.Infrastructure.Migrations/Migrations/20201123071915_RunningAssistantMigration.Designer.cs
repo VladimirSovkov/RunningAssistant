@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RunningAssistant.Infrastructure.Data;
 
 namespace RunningAssistant.Infrastructure.Migrations.Migrations
 {
     [DbContext(typeof(RunningAssistantContext))]
-    partial class RunningAssistantContextModelSnapshot : ModelSnapshot
+    [Migration("20201123071915_RunningAssistantMigration")]
+    partial class RunningAssistantMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

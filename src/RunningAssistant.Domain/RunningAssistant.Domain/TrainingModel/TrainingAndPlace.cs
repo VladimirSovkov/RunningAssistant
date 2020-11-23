@@ -18,5 +18,8 @@ namespace RunningAssistant.Domain.TrainingModel
 
         public virtual Training Training { get; private set; }
         public int TrainingId { get; private set; }
+
+        private TrainingAndPlace()
+        { }
     }
 }

@@ -10,8 +10,8 @@ namespace RunningAssistant.Infrastructure.Data.EntityConfiguration
         {
             builder.ToTable("food");
             builder.HasKey(x => x.Id);
-            //builder.Property(x => x.Id).UseHiLo(HiLoSequence.DBSequenceHiLoForRunningAssistant);
-            //builder.Property(x => x.Name).HasMaxLength(25);
+            builder.Property(x => x.Id).UseHiLo(HiLoSequence.DBSequenceHiLoForRunningAssistant);
+            builder.Property(x => x.Name).HasMaxLength(25);
         }
     }
 }

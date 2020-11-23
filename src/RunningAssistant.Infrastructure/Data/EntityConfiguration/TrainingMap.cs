@@ -8,7 +8,14 @@ namespace RunningAssistant.Infrastructure.Data.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<Training> builder)
         {
-            throw new System.NotImplementedException();
+            builder.ToTable("training");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).UseHiLo(HiLoSequence.DBSequenceHiLoForRunningAssistant);
+
+            builder.Property(x => x.Name).HasMaxLength(20);
+            builder.Property(x => x.Type).HasMaxLength(25);
+            builder.Property(x => x.Description).HasMaxLength(255);
+            //возможно будет ошибка из за duration: DateTime
         }
     }
 }

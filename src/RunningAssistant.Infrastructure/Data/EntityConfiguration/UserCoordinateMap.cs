@@ -8,7 +8,10 @@ namespace RunningAssistant.Infrastructure.Data.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<UserCoordinate> builder)
         {
-            throw new System.NotImplementedException();
+            builder.ToTable("user_coordinate");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).UseHiLo(HiLoSequence.DBSequenceHiLoForRunningAssistant);
+            builder.HasOne(x => x.User).WithMany().HasForeignKey(x => x.IdUser);
         }
     }
 }

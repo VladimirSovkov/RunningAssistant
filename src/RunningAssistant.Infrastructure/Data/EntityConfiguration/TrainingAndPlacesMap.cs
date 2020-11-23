@@ -8,7 +8,12 @@ namespace RunningAssistant.Infrastructure.Data.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<TrainingAndPlace> builder)
         {
-            throw new System.NotImplementedException();
+            builder.ToTable("training_and_place");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).UseHiLo(HiLoSequence.DBSequenceHiLoForRunningAssistant);
+
+            builder.HasOne(x => x.Place).WithMany().HasForeignKey(x => x.PlaceId);
+            builder.HasOne(x => x.Training).WithMany().HasForeignKey(x => x.TrainingId);
         }
     }
 }

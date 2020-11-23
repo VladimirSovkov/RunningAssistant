@@ -18,5 +18,8 @@ namespace RunningAssistant.Domain.UserModel
 
         public int IdFood { get; private set; }
         public virtual Food Food { get; private set; }
+
+        private UserFood()
+        { }
     }
 }

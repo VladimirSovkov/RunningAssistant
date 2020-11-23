@@ -24,5 +24,9 @@ namespace RunningAssistant.Domain.UserModel
 
         public DateTime CreationDate { get; private set; }
         public float Value { get; private set; }
+
+
+        private Result()
+        { }
     }
 }
